@@ -3,13 +3,12 @@ Maven and Java are required. After that it's as simple as running `mvn:install`.
 
 For the KNOX and SSL:
 
-    `
-    java -Xmx1024m -classpath :lib/* -Dhdp.version=2.6.5.0-292 -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=${HOME} -Dhadoop.log.file=hadoop.log \
-    -Dhadoop.home.dir=${HOME} -Dhadoop.id.str=${USER} -Dhadoop.root.logger=INFO,console -Djava.library.path=:${JAVA_HOME} -Dhadoop.policy.file=hadoop-policy.xml \
-    -Djava.net.preferIPv4Stack=true -Djavax.security.auth.useSubjectCredsOnly=false -Dhadoop.security.logger=INFO,NullAppender org.apache.hadoop.util.RunJar \
-    ${HOME}/lib/hive-beeline-1.2.1000.2.6.5.0-292.jar org.apache.hive.beeline.BeeLine  -n knox_user -p knox_password -u \
-    "jdbc:hive2://KNOX_HOSTNAME:443/;ssl=true;sslTrustStore=/etc/ssl/certs/java/cacerts;trustStorePassword=changeit?hive.server2.transport.mode=http;hive.server2.thrift.http.path=gateway/default/hive"
-    `
+```
+java -Xmx1024m -classpath :lib/* -Dhdp.version=2.6.5.0-292 -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=${HOME} -Dhadoop.log.file=hadoop.log \
+-Dhadoop.home.dir=${HOME} -Dhadoop.id.str=${USER} -Dhadoop.root.logger=INFO,console -Djava.library.path=:${JAVA_HOME} -Dhadoop.policy.file=hadoop-policy.xml \
+-Djava.net.preferIPv4Stack=true -Djavax.security.auth.useSubjectCredsOnly=false -Dhadoop.security.logger=INFO,NullAppender org.apache.hadoop.util.RunJar \
+${HOME}/lib/hive-beeline-1.2.1000.2.6.5.0-292.jar org.apache.hive.beeline.BeeLine  -n knox_user -p knox_password -u \ "jdbc:hive2://KNOX_HOSTNAME:443/;ssl=true;sslTrustStore=/etc/ssl/certs/java/cacerts;trustStorePassword=changeit?hive.server2.transport.mode=http;hive.server2.thrift.http.path=gateway/default/hive"
+```
 
 # Logging
 All logging dependencies have been filtered and bridged with SLF4J in this jar and Log4J has been included as the logging implementation.  While no `log4j.properties` has been included in this jar, its fairly easy to configure Log4J and DbVisualizer to debug whats happening inside JDBC.  To setup Log4J in DbVisualizer, do the following.
