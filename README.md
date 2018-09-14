@@ -2,7 +2,7 @@
 Maven and Java are required. After that it's as simple as running `mvn:install`.  A folder called `libs` will be created in your `target` directory. It contains all jars that you need. Copy them to your home dir.
 
 For the KNOX and SSL:
-    ```
+    ```bash
     java -Xmx1024m -classpath :lib/* -Dhdp.version=2.6.5.0-292 -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=${HOME} -Dhadoop.log.file=hadoop.log \
     -Dhadoop.home.dir=${HOME} -Dhadoop.id.str=${USER} -Dhadoop.root.logger=INFO,console -Djava.library.path=:${JAVA_HOME} -Dhadoop.policy.file=hadoop-policy.xml \
     -Djava.net.preferIPv4Stack=true -Djavax.security.auth.useSubjectCredsOnly=false -Dhadoop.security.logger=INFO,NullAppender org.apache.hadoop.util.RunJar \
