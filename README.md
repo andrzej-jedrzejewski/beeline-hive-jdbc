@@ -1,5 +1,5 @@
 # How to Build
-Maven and Java are required. After that it's as simple as running `mvn:install`.  A folder called `libs` will be created in your `target` directory. It contains all jars that you need. Copy them to you home dir.
+Maven and Java are required. After that it's as simple as running `mvn:install`.  A folder called `libs` will be created in your `target` directory. It contains all jars that you need. Copy them to your home dir.
 
 For the KNOX and SSL:
     ```
